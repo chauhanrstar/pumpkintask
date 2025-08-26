@@ -1,10 +1,12 @@
-# Example Dockerfile
-FROM python:3.10-slim
+FROM node:18-alpine
 
 WORKDIR /app
 
+COPY package*.json ./
+RUN npm install
+
 COPY . .
 
-RUN pip install -r requirements.txt
+EXPOSE 80
+CMD ["node", "index.js"]
 
-CMD ["python", "app.py"]
