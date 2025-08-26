@@ -18,9 +18,9 @@ jobs:
       - name: SCP Files & SSH to EC2
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.EC2_IP }}
+          host: ${{ secrets.13.127.39.38 }}
           username: ubuntu
-          key: ${{ secrets.EC2_KEY }}
+          key: ${{ secrets.task }}
           script: |
             docker stop myapp || true
             docker rm myapp || true
